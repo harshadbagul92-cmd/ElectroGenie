@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ElectroGenie</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">
+      <div class="logo-icon">&#9889;</div>
+      <span class="logo-text">Electro<span class="blue">Genie</span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>Generate circuits and code instantly</h1>
+    <p>Type your project idea and get microcontroller code, components and wiring explanation</p>
+
+    <div class="search-bar">
+      <input type="text" id="projectInput" placeholder="e.g. home automation, traffic light, soil moisture..." />
+      <button onclick="generateProject()">Generate</button>
+    </div>
+
+    <div class="chips">
+      <span class="chip" onclick="setQuery('home automation')">Home automation</span>
+      <span class="chip" onclick="setQuery('traffic light')">Traffic light</span>
+      <span class="chip" onclick="setQuery('soil moisture sensor')">Soil moisture</span>
+      <span class="chip" onclick="setQuery('LED blink')">LED blink</span>
+      <span class="chip" onclick="setQuery('temperature monitor')">Temperature monitor</span>
+    </div>
+  </section>
+
+  <!-- RESULT BOX -->
+  <section class="result-section" id="resultSection">
+    <h2 id="resultTitle">Result</h2>
+    <div class="result-info" id="resultInfo"></div>
+    <pre class="result-code" id="resultCode"></pre>
+  </section>
+
+  <!-- CIRCUIT DIAGRAM SECTION (NEW - PHASE 3) -->
+  <section class="circuit-section" id="circuitSection">
+    <h2>Circuit diagram</h2>
+    <p class="circuit-subtitle">Pin connections for your project</p>
+    <div class="circuit-container">
+      <canvas id="circuitCanvas"></canvas>
+    </div>
+    <div class="component-list" id="componentList"></div>
+  </section>
+
+  <!-- POPULAR PROJECTS -->
+  <section class="projects-section">
+    <h2>Popular projects</h2>
+    <div class="cards">
+
+      <div class="card" onclick="setQuery('home automation'); generateProject()">
+        <div class="card-icon blue-icon">&#127968;</div>
+        <h3>Home automation</h3>
+        <p>Control lights and appliances remotely</p>
+        <span class="badge badge-blue">ESP32</span>
+      </div>
+
+      <div class="card" onclick="setQuery('soil moisture sensor'); generateProject()">
+        <div class="card-icon green-icon">&#127807;</div>
+        <h3>Soil moisture sensor</h3>
+        <p>Smart plant watering system</p>
+        <span class="badge badge-green">Arduino Uno</span>
+      </div>
+
+      <div class="card" onclick="setQuery('temperature monitor'); generateProject()">
+        <div class="card-icon amber-icon">&#127777;</div>
+        <h3>Temperature monitor</h3>
+        <p>DHT11 sensor with LCD display</p>
+        <span class="badge badge-amber">Arduino Nano</span>
+      </div>
+
+      <div class="card" onclick="setQuery('LED blink'); generateProject()">
+        <div class="card-icon blue-icon">&#128161;</div>
+        <h3>LED blink</h3>
+        <p>Beginner LED on/off project</p>
+        <span class="badge badge-blue">Arduino Uno</span>
+      </div>
+
+      <div class="card" onclick="setQuery('traffic light'); generateProject()">
+        <div class="card-icon green-icon">&#128678;</div>
+        <h3>Traffic light</h3>
+        <p>Red, yellow, green LED sequence</p>
+        <span class="badge badge-green">Arduino Uno</span>
+      </div>
+
+      <div class="card" onclick="setQuery('ultrasonic distance sensor'); generateProject()">
+        <div class="card-icon amber-icon">&#128225;</div>
+        <h3>Distance sensor</h3>
+        <p>Measure distance using HC-SR04</p>
+        <span class="badge badge-amber">Arduino Nano</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&#9889; ElectroGenie &mdash; Built by Harshad | FY IT</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
