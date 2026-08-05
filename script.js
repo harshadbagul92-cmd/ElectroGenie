@@ -1,7 +1,7 @@
 // ===== ELECTROGENIE - PHASE 3 UPGRADED =====
 // Realistic Circuit Diagram with drawn components!
 
-const API_KEY = "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"; // Replace with your Groq API key
+const API_KEY = "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"; // Replace with your Groq API key
 
 function setQuery(text) {
   document.getElementById("projectInput").value = text;
